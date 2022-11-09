@@ -1,0 +1,38 @@
+stages:
+#   - test
+  - deploy
+
+image: node:16
+
+# test:
+#   stage: test
+#   script:
+#     - npm run lint
+#     - npm run test
+
+deploy:
+  stage: deploy
+  script:
+    - |
+      echo Lets set BASE_URL
+      if [[ $CI_COMMIT_BRANCH == main ]]; then
+        BASE_URL=$BASE_PATH
+      elif [[ $CI_COMMIT_BRANCH == staging ]]; then
+        BASE_URL=$BASE_PATH/$CI_COMMIT_BRANCH
+      elif [[ $CI_COMMIT_BRANCH == features/* ]]; then
+        BASE_URL=$BASE_PATH/$CI_COMMIT_BRANCH
+      else
+        curl --request POST --header "PRIVATE-TOKEN: $MY_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/pipelines/$CI_PIPELINE_ID/cancel"
+      fi
+      export BASE_URL=$BASE_URL
+      echo base url is $BASE_URL
+
+    - echo "Deploy generated static to s3"
+    - apt-get update
+    - apt-get install -y python3 python3-pip
+    - pip3 install --upgrade pip
+    - pip3 install awscli
+    - yarn install
+    - yarn run build
+    - aws s3 sync dist/ s3://$S3_BUCKET$BASE_URL --delete --exclude 'features/*' --exclude 'staging/*'
+    - aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DISTRIBUTION_ID --paths "$BASE_URL/*"

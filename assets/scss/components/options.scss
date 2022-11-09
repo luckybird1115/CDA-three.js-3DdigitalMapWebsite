@@ -1,0 +1,54 @@
+.options-wrapper{
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  bottom: 1rem;
+  left: 50vw;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 999;
+  // border: 1px solid red;
+}
+
+.options {
+  z-index: 100;
+  padding: 0.5rem 1.5rem;
+  margin: 0 0.5rem;
+  width: 160px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: .7rem;
+  border-radius: 1.25rem;
+}
+
+.options-title {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.options-section {
+  display: flex;
+  justify-content: space-around;
+  // margin-bottom: 1.5rem;
+}
+
+.options-section-icon{
+  margin-right: 1rem;
+}
+
+.options-section .vue-slider {
+  min-width: 140px;
+}
+
+.message {
+  color: orange;
+  font-size: .7rem;
+  text-align: center;
+}
+
+label {
+  cursor: pointer;
+  vertical-align: top;
+  margin: 0 0 0 5px;
+}

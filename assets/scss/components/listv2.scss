@@ -1,0 +1,33 @@
+.listv2 {
+  padding: 0;
+  list-style: none;
+  counter-reset: li;
+  max-height: 20vh;
+  overflow-x: hidden;
+  overflow-y:auto;
+  .li {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 50px);
+
+    position: relative;
+    padding: 8px 12px;
+    margin: 6px 0 6px 0;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    svg {
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      color: #22d0eb;
+      svg {
+        fill: #22d0eb;
+      }
+    }
+
+  }
+}
+

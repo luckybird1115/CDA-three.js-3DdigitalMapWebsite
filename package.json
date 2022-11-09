@@ -1,0 +1,46 @@
+{
+  "name": "twin-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "externalhost": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix"
+  },
+  "dependencies": {
+    "core-js": "^3.25.3",
+    "nearest-date": "^1.0.1",
+    "nuxt": "^2.15.8",
+    "nuxt-svg-loader": "^1.2.0",
+    "sass": "^1.55.0",
+    "stats-js": "^1.0.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.145.0",
+    "troika-three-text": "^0.46.4",
+    "vite": "^3.1.7",
+    "vite-svg-loader": "^3.6.0",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-slider-component": "^3.2.20",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@nuxt/types": "~2.15.0",
+    "@nuxtjs/eslint-config": "^11.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.5.1",
+    "prettier": "^2.7.1",
+    "sass-loader": "^10"
+  }
+}

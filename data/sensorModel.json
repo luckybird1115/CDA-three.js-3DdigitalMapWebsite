@@ -1,0 +1,11 @@
+{
+    "sensor": [
+      {
+        "id": "sensor",
+        "name": "sensor",
+        "src": "/models/digital_alarm_clock.glb",
+        "shapes": ""
+      }
+    ]
+  }
+  

@@ -1,0 +1,13 @@
+.custom-checkbox-small {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-checkbox-small+label::before {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-checkbox-small+label{
+  font-size: 12px;
+}

@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "id": "glycol-plant-uncompressed",
+      "name": "Glycol plant (uncompressed, 341MB)",
+      "src": "/models/glycol-plant-uncompressed.glb",
+      "shapes": "glycol-plant-cav"
+    },
+    {
+      "id": "glycol-plant-compressed",
+      "name": "Glycol plant (compressed, 46MB)",
+      "src": "/models/glycol-plant-compressed.glb",
+      "shapes": "glycol-plant-cav"
+    }
+  ]
+}

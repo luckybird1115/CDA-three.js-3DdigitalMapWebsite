@@ -1,0 +1,31 @@
+.shape-card-wapper {
+  position: absolute;
+  height: 0;
+  width: 0;
+  z-index: 999;
+  // transform-style: preserve-3d;
+}
+
+.shape-card-info {
+  position: absolute;
+  display: flex;
+  font-size: 0.65rem;
+  min-width: 250px;
+  height: fit-content;
+  padding: 6px 6px ;
+  z-index: 999;
+  color: #fff;
+  background-color: rgba(95, 36, 71, 0.721);
+  border: 2px solid white;
+}
+
+.shape-card-info-items{
+
+}
+
+.close-tag{
+  
+  &:hover{
+    cursor: pointer;
+  }
+}
